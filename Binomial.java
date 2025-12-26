@@ -4,7 +4,7 @@ public class Binomial {
 		//// Uncomment the version of binomial that you want to test
  
 		// Testing the basic binomial implementation:
-    	// System.out.println(binomial1(Integer.parseInt(args[0]), Integer.parseInt(args[1])));
+    	System.out.println(binomial1(Integer.parseInt(args[0]), Integer.parseInt(args[1])));
 
 		// Testing the optimized binomial implementation:
 		// System.out.println(binomial(Integer.parseInt(args[0]), Integer.parseInt(args[1])));
@@ -13,7 +13,13 @@ public class Binomial {
 	// Computes the Binomial function, basic version.
 	public static int binomial1(int n, int k) { 
 		//// Repplace the following comment with your code
-		return 0;
+		if (k > n){
+			 return 0;
+		}
+		if (k == 0 || n == 0){
+			return 1;
+		} 
+		return binomial1(n - 1, k) + binomial1(n - 1, k - 1);
 	 }
 	
 	// Computes the Binomial function, efficiently
